@@ -4,8 +4,9 @@ myFDA <- function(X, y) {
   
   
   #Calculate the within-class scatter matrix for both the classes
-  SW0 = (X[y == 0,] - colMeans(X[y == 0,])
-  SW1 = (X[y == 1,] - colMeans(X[y == 1,])
+  SW0 = (X[y == 0,] - colMeans(X[y == 0,]))
+  SW1 = (X[y == 1,] - colMeans(X[y == 1,]))
+
   SW0 = t(SW0) %*% (Sw0)
   SW1 = t(SW1) %*% (SW1)
   

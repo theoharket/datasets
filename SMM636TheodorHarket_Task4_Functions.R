@@ -1,4 +1,4 @@
-library(caret)
+
 #Fisher discrimant analysis-function
 myFDA <- function(X, y) {
   

@@ -30,7 +30,7 @@ myFDA <- function(x, y) {
   class_means = colMeans(x[y == 1,]) - colMeans(x[y == 0,])
   
   #4.
-  w = solve(S_W) %*% class_means
+  w = solve(S_W) %*% class_means #This is the part where we assume that the covariance matrix of both classes is equal 
   
   #5.
   return(w)

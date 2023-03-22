@@ -2,7 +2,9 @@
 #Fisher discrimant analysis-function
 myFDA <- function(x, y) {
   
-  #Since it is unclear in the task description whether we want the Fisher's Linear Discriminant Analysis, or Fisher's Discriminant Analysis. 
+  #Since it is unclear in the task description whether we want the Fisher's Linear Discriminant Analysis, or Fisher's Discriminant Analysis.
+  #This function is implementing the Fisher's Linear Discriminant Analysis.
+  
   #It's important to note that this implementation assumes that the covariance matrix is the same for both classes, 
   #the equal covariance assumption. If this assumption does not hold, this function will not have the correct implementation.
   

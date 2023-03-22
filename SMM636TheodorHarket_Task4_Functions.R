@@ -2,14 +2,17 @@
 #Fisher discrimant analysis-function
 myFDA <- function(x, y) {
   
-  #Since it is unclear whether we want the Fisher's Linear Discriminant Analysis, or Fisher's Discriminant Analysis due to the task description being unclear
-  #where we assume that the normality assumption is fulfilled, where we expect tjat tje 
+  #Since it is unclear in the task description whether we want the Fisher's Linear Discriminant Analysis, or Fisher's Discriminant Analysis. 
+  #It's important to note that this implementation assumes that the covariance matrix is the same for both classes, 
+  #the equal covariance assumption. If this assumption does not hold, this function will not have the correct implementation.
   
   #Steps in this function:
   #1. Calculate the within-class scatter matrix for both the classes by subtracting every column for both of the classes from the mean of the feature
   #2. Multiplying the corresponding SW0 and SW1 separately, and then adding them to get the scatter matrix combined for both classes. 
           #Giving me a pxp matrix
   #3. Calculating the difference in means to get the direction of class mean difference
+  #4. Taking the inverse of the weights, multiplying it with the difference in class means
+  #5. Returning the weights
   
   
   #1.
@@ -21,14 +24,13 @@ myFDA <- function(x, y) {
   #2.
   S_W = SW0 + SW1
   
-  #Calculating the difference in means to get the direction of class mean difference
+  #3.
   class_means = colMeans(x[y == 1,]) - colMeans(x[y == 0,])
   
-
-  #Taking the inverse of the weights, multiplying it with the difference in class means
+  #4.
   w = solve(S_W) %*% class_means
   
-  #Returning the corresponding weights
+  #5.
   return(w)
 }
 

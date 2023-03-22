@@ -8,8 +8,8 @@ myFDA <- function(X, y) {
   SW1 = (X[y == 1,] - colMeans(X[y == 1,]))
   
   diag = ncol(X)
-  SW0 = (t(SW0) %*% (SW0))#+diag(diag)*0.01
-  SW1 = (t(SW1) %*% (SW1))#+diag(diag)*0.01
+  SW0 = (t(SW0) %*% (SW0))
+  SW1 = (t(SW1) %*% (SW1))
   
   #Calculating the scatter matrix for both classes
   S_W = SW0 + SW1

@@ -22,17 +22,13 @@ myFDA <- function(x, y) {
   SW1 = (x[y == 1,] - colMeans(x[y == 1,]))
   SW0 = (t(SW0) %*% (SW0))
   SW1 = (t(SW1) %*% (SW1))
-  print(dim(SW0))
-  print(dim(SW1))
+  
   #2.
   S_W = SW0 + SW1
-  print(dim(S_W))
   #3.
   class_means = colMeans(x[y == 1,]) - colMeans(x[y == 0,])
-  print(dim(class_means))
   #4.
   w = solve(S_W) %*% class_means #This is the part where we assume that the covariance matrix of both classes is equal 
-  print(dim(w))
   #5.
   return(w)
 }

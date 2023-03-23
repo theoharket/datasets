@@ -18,8 +18,6 @@ myFDA <- function(x, y) {
   
   
   #1.
-  print(dim(x[y == 0,]))
-  print(dim(colMeans(x[y == 0,])))
   SW0 = (x[y == 0,] - colMeans(x[y == 0,]))
   SW1 = (x[y == 1,] - colMeans(x[y == 1,]))
   SW0 = (t(SW0) %*% (SW0))
